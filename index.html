@@ -1,162 +1,697 @@
-
 <!DOCTYPE html>
 
 <html>
-  <head>
-  	
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Crypto in Paris - for Beginners!</title>
-<meta name="author" content="Patrick McCorry">
-<meta name="description" content="Crypto in Paris - for Beginners!">
-<meta http-equiv="content-language" content="en-us" />
-<meta property="og:url"                content="https://cryptocurrencyclass.github.io/" />
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="Crypto in Paris - for Beginners!" />
-<meta property="og:description"        content="A free in-person workshop to learn more about Ethereum. " />
-<meta property="og:image"              content="https://upload.wikimedia.org/wikipedia/en/f/f8/Internet_dog.jpg" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Crypto in Paris - for Beginners!</title>
+  <meta name="author" content="Patrick McCorry">
+  <meta name="description" content="Crypto in Paris - for Beginners!">
+  <meta http-equiv="content-language" content="en-us" />
+  <meta property="og:url" content="https://cryptocurrencyclass.github.io/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Crypto in Paris - for Beginners!" />
+  <meta property="og:description" content="A free in-person workshop to learn more about Ethereum. " />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/f/f8/Internet_dog.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" />
+  <link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <style>
+    .rainbow-text {
+      background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+      text-align: center;
+      background-size: 800% 800%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 24px;
+      animation: rainbow 8s ease infinite;
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 25%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+  </style>
 
 <body>
-<h1>Crypto in Paris - For Beginners!</h1>
+  <!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  const colors = require('tailwindcss/colors')
+  
+  module.exports = {
+    // ...
+    theme: {
+      extend: {
+        colors: {
+          rose: colors.rose,
+        },
+      },
+    },
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+  <div class="bg-white">
+    <main>
+      <!-- Hero section -->
+      <div class="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
+        <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
+          <div>
+            <div>
+              <img class="h-36 w-auto" src="VectorWiki-2k93v__ethereum-icon-purple.svg" alt="Workflow">
+            </div>
+            <div class="mt-12">
+              <div>
+                <a href="#" class="inline-flex space-x-4">
+                  <span
+                    class="rounded bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-500 tracking-wide uppercase">
+                    Beginner Friendly </span>
+                </a>
+              </div>
+              <div class="mt-6 sm:max-w-xl">
+                <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Crypto in Paris</h1>
+                <p class="mt-6 text-xl text-gray-700">We have put together a 1-day workshop to help beginners get
+                  started with building systems on or on top of an
+                  EVM-compatible chain.</p>
+              </div>
+              <!-- <form action="#" class="mt-12 sm:max-w-lg sm:w-full sm:flex">
+                <div class="min-w-0 flex-1">
+                  <label for="hero-email" class="sr-only">Email address</label>
+                  <input id="hero-email" type="email"
+                    class="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-rose-500 focus:ring-rose-500"
+                    placeholder="Enter your email">
+                </div>
+                <div class="mt-4 sm:mt-0 sm:ml-3">
+                  <button type="submit"
+                    class="block w-full rounded-md border border-transparent px-5 py-3 bg-rose-500 text-base font-medium text-white shadow hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 sm:px-10">Notify
+                    me</button>
+                </div>
+              </form> -->
+              <!-- <div class="mt-6"> -->
+              <!-- <div class="inline-flex items-center divide-x divide-gray-300">
+                  <div class="flex-shrink-0 flex pr-5">
+                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                      fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                      fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                      fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                      fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                      fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                  <div class="min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3"><span
+                      class="font-medium text-gray-900">Rated 5 stars</span> by over <span
+                      class="font-medium text-rose-500">500 beta users</span></div>
+                </div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
 
-<p>We have put together a 1-day workshop to help beginners get started with building systems on or on top of an EVM-compatible chain.</p>
+        <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
+          <div class="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <div class="hidden sm:block">
+              <div
+                class="absolute inset-y-0 left-1/2 w-screen bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full">
+              </div>
+              <svg class="absolute top-8 right-1/2 -mr-3 lg:m-0 lg:left-0" width="404" height="392" fill="none"
+                viewBox="0 0 404 392">
+                <defs>
+                  <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
+                    patternUnits="userSpaceOnUse">
+                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                  </pattern>
+                </defs>
+                <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)" />
+              </svg>
+            </div>
+            <div class="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
+              <img
+                class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"
+                src="/louvre.jpg" alt="'Paris' by barnyz is licensed under CC BY-NC-ND 2.0">
+            </div>
+          </div>
+        </div>
+      </div>
 
-<ul>
-    <li><b>Location:</b> Pôle Universitaire Léonard de Vinci, La Défense (<a href="https://twitter.com/ESILVparis">@ESILVparis</a>)</li>
-    <li><b>Date:</b> 22nd July (after EthCC)</li>
-    <li><b>Time:</b> 8:45 - 18:00 (long day) </li>
-</ul>
+      <!-- Testimonial/stats section -->
+      <div class="relative mt-20">
+        <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
+          <div class="relative sm:py-16 lg:py-0">
+            <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
+              <div class="absolute inset-y-0 right-1/2 w-full bg-gray-50 rounded-r-3xl lg:right-72"></div>
+              <svg class="absolute top-8 left-1/2 -ml-3 lg:-right-8 lg:left-auto lg:top-12" width="404" height="392"
+                fill="none" viewBox="0 0 404 392">
+                <defs>
+                  <pattern id="02f20b47-fd69-4224-a62a-4c9de5c763f7" x="0" y="0" width="20" height="20"
+                    patternUnits="userSpaceOnUse">
+                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                  </pattern>
+                </defs>
+                <rect width="404" height="392" fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)" />
+              </svg>
+            </div>
+            <div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
+              <!-- Testimonial card-->
+              <div class="relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden">
+                <img class="absolute inset-0 h-full w-full object-cover" src="defense.jpg" alt="">
+                <div class="absolute inset-0 bg-rose-500 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-rose-600 via-rose-600 opacity-50"></div>
+                <!-- <div class="relative px-8">
+                  <div>
+                    <img class="h-12" src="https://tailwindui.com/img/logos/workcation.svg?color=white"
+                      alt="Workcation">
+                  </div>
+                  <blockquote class="mt-8">
+                    <div class="relative text-lg font-medium text-white md:flex-grow">
+                      <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-rose-400"
+                        fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                          d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                      </svg>
+                      <p class="relative">Tincidunt integer commodo, cursus etiam aliquam neque, et. Consectetur pretium
+                        in volutpat, diam. Montes, magna cursus nulla feugiat dignissim id lobortis amet.</p>
+                    </div>
 
-<h2>Workshop content</h2>
+                    <footer class="mt-4">
+                      <p class="text-base font-semibold text-rose-200">Sarah Williams, CEO at Workcation</p>
+                    </footer>
+                  </blockquote>
+                </div> -->
+              </div>
+            </div>
+          </div>
 
-We plan to cover the following:
-<ul>
-    <li>Nakamoto consensus, blockchain forks, transactions</li>
-    <li>Solidity programming</li>
-    <li>Common bugs and attacks on smart contracts</li>
-    <li>ETH-Scaffold framework for quick experimentation</li>
-</ul>
+          <div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
+            <!-- Content area -->
+            <div class="pt-12 sm:pt-16 lg:pt-20">
+              <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">Location
+              </h2>
+              <div class="mt-6  space-y-6">
+                <p class="text-lg text-gray-700">Pôle Universitaire Léonard de Vinci, La Défense</p>
+                <p class="text-xl leading-7 text-rose-700"><a href="https://twitter.com/ESILVparis"
+                    referrerpolicy="nofollow" target="_blank">@ESILVparis</a>
+              </div>
+            </div>
 
-<h2>How to Join</h2>
+            <!-- Stats section -->
+            <div class="mt-10">
+              <dl class="grid grid-cols-2 gap-x-4 gap-y-8">
+                <div class="border-t-2 border-gray-100 pt-6">
+                  <dt class="text-base font-medium text-gray-500">Date</dt>
+                  <dd class="text-3xl font-extrabold tracking-tight text-gray-900">22nd July <br><span
+                      class="text-gray-700 text-lg">(after
+                      EthCC)</span></dd>
+                </div>
 
-<p>Would you like to join? Please make sure you satisfy the pre-requisite requirements?</p>
+                <div class="border-t-2 border-gray-100 pt-6">
+                  <dt class="text-base font-medium text-gray-500">Time</dt>
+                  <dd class="text-3xl font-extrabold tracking-tight text-gray-900">8:45 - 18:00 <br><span
+                      class="text-gray-700 text-lg">(long day)</span></dd>
+                </div>
 
-<ul>
-    <li>Some coding experience</li>
-    <li>A bystander wanting to learn more about Ethereum</li>
-    <li>Can attend in-person</li>
-</ul>
+              </dl>
+              <div class="mt-10">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<p>Then you are welcome to join the course! <b>And it is free!</b></p>
+      <!-- Logo cloud section -->
+      <div class="mt-32">
+        <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+          <div class="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
+            <div>
+              <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Workshop content</h2>
+              <p class="mt-6 max-w-3xl text-lg leading-7 text-gray-500">Extensive amount of content</p>
+            </div>
+            <div role="list" class="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+              <div class="col-span-1 flex items-center py-8 px-8 bg-gray-50">
+                <svg class="h-6 w-6 text-rose-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Nakamoto consensus</span>
+              </div>
 
-<p>We can only accomodate up to 70 attendees. Please <a href="https://forms.gle/WwtW3TJPQ4jSewoA8">sign up here</a>.</p>
+              <div class="col-span-1 flex items-center py-8 px-8 bg-gray-50">
+                <svg class="h-6 w-6 text-rose-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Blockchain forks</span>
+              </div>
+              <div class="col-span-1 flex items-center py-8 px-8 bg-gray-50">
+                <svg class="h-6 w-6 text-rose-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Transactions</span>
+              </div>
+              <div class="col-span-1 flex items-center py-8 px-8 bg-gray-50">
+                <svg class="h-6 w-6 text-rose-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Solidity programming</span>
+              </div>
+              <div class="col-span-1 flex items-center py-8 px-8 bg-gray-50">
+                <svg class="h-6 w-6 text-rose-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Common bugs</span>
+              </div>
+              <div class="col-span-1 flex items-center py-8 px-8 bg-gray-50">
+                <svg class="h-6 w-6 text-rose-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Attacks on smart contracts</span>
+              </div>
+              <div class="col-span-1 flex items-center py-8 px-8 bg-gray-50">
+                <svg class="h-6 w-6 text-rose-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">ETH-Scaffold framework</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<p><i>Due to limited space, we cannot accept all registrations and we may ask to speak with you over a call to confirm attendance.</i></p>
-	
-<h2>Provisional Outline for Class </h2>
+      <div class="mt-32">
+        <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+          <div class="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
+            <div class="prose prose-indigo text-gray-700 mx-auto lg:max-w-none">
+              <div class="text-base max-w-prose mx-auto lg:max-w-none mb-6">
+                <h2 class="mt-2 leading-8 text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">How to
+                  Join</h2>
+              </div>
+              <div class="relative z-10 text-base max-w-prose mx-auto lg:max-w-5xl lg:mx-0 lg:pr-72">
+                <p class="text-lg text-gray-700">Would you like to join?<br />Please make sure you satisfy the
+                  pre-requisite
+                  requirements?</p>
+              </div>
+              <ul role="list">
+                <li>Some coding experience</li>
+                <li>A bystander wanting to learn more about Ethereum</li>
+                <li>Can attend in-person</li>
+              </ul>
+              <p>Then you are welcome to join the course!
+              </p>
+            </div>
+            <div class="relative bg-rose-500 rounded-lg shadow-lg">
+              <div class="mt-12 relative z-0 text-base max-w-prose mx-auto lg:mt-0 lg:max-w-none">
 
-<p>All class material is publicly available. You may use/share/modify as you please.</p>
-<p><i>We will try to record the sessions and put it online.</i></p>
-<style type="text/css">
-   .table-container {
-	overflow-x: auto;	   
-   }
-   .tg  {border-collapse:collapse;border-spacing:0;}
-   .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-     overflow:hidden;padding:10px 5px;word-break:normal;}
-   .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-     font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-   .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-   .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-   .tg .tg-0lax{text-align:left;vertical-align:top}
-   </style>
-   <div class="table-container">
-   <table class="tg">
-   <thead>
-    <tr>
-        <th class="tg-0pky">Time</th>
-        <th class="tg-0pky">Title</th>
-        <th class="tg-0pky">Reading material</th>
-      </tr>
-     <tr>
-       <th class="tg-c3ow" colspan="3">Friday - 22nd July</th>
-     </tr>
-   </thead>
-   <tbody> 
-     <tr>
-       <td class="tg-0pky">8:45 - 9:00</td>
-       <td class="tg-0pky">Introduction to the workshop</td>
-       <td class="tg-0pky">
-        </td>
-     </tr>
-     <tr>
-        <td class="tg-0pky">9:00 - 10:15</td>
-        <td class="tg-0pky">Why cryptocurrencies are interesting and how it all ties together </td>
-        <td class="tg-0pky"></td>
-      </tr>
-      <tr>
-        <td class="tg-0pky">10:15 - 10:45</td>
-        <td class="tg-0pky">Break</td>
-        <td class="tg-0pky">
-         </td>
-      </tr>
-      <tr>
-        <td class="tg-0pky">10:45 - 12:00</td>
-        <td class="tg-0pky">Implement a hello world smart contract (Solidity)</td>
-        <td class="tg-0pky">
-         </td>
-      </tr>
-      <tr>
-        <td class="tg-0pky">12:00 - 13:30</td>
-        <td class="tg-0pky">Lunch</td>
-        <td class="tg-0pky">
-         </td>
-      </tr>
-      <tr>
-        <td class="tg-0pky">13:30 - 15:00</td>
-        <td class="tg-0pky">Breaking smart contracts</td>
-        <td class="tg-0pky">
-         </td>
-      </tr>
-      <tr>
-        <td class="tg-0pky">15:00 - 15:30</td>
-        <td class="tg-0pky">Break</td>
-        <td class="tg-0pky">
-         </td>
-      </tr>
-      <tr>
-        <td class="tg-0pky">15:30 - 18:00</td>
-        <td class="tg-0pky">Introduction to ETH Scaffolding</td>
-        <td class="tg-0pky">
-         </td>
-      </tr>
-   </tbody>
-   </table>
-   </div>
+              </div>
+              <div class="relative z-10 rounded-t-lg px-24 py-16 sm:px-36 sm:py-24">
+                <div aria-hidden="true" class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
+                  <svg class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1463 360">
+                    <path class="text-rose-400 text-opacity-40" fill="currentColor"
+                      d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z" />
+                    <path class="text-rose-600 text-opacity-40" fill="currentColor"
+                      d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z" />
+                  </svg>
+                </div>
+                <div class="relative flex items-center justify-center">
+                  <h3 class="relative text-uppercase text-6xl text-white font-extrabold">FREE!</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<h2>Instructors</h2>
+      <!-- CTA section -->
+      <div class="relative mt-24 sm:mt-32 sm:py-16">
+        <div aria-hidden="true" class="hidden sm:block">
+          <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50 rounded-r-3xl"></div>
+          <svg class="absolute top-8 left-1/2 -ml-3" width="404" height="392" fill="none" viewBox="0 0 404 392">
+            <defs>
+              <pattern id="8228f071-bcee-4ec8-905a-2a059a2cc4fb" x="0" y="0" width="20" height="20"
+                patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="404" height="392" fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)" />
+          </svg>
+        </div>
+        <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+          <a href="https://forms.gle/WwtW3TJPQ4jSewoA8" referrerpolicy="noreferrer" target="_blank">
+            <div
+              class="relative block text-center text-6xl text-white uppercase font-extrabold rounded-2xl px-6 py-10 bg-rose-500 overflow-hidden shadow-xl sm:px-12 sm:py-20 cursor-pointer transform transition hover:scale-105 active:scale-95">
+              <div aria-hidden="true" class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
+                <svg class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1463 360">
+                  <path class="text-rose-400 text-opacity-40" fill="currentColor"
+                    d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z" />
+                  <path class="text-rose-600 text-opacity-40" fill="currentColor"
+                    d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z" />
+                </svg>
+              </div>
+              <a href="https://forms.gle/WwtW3TJPQ4jSewoA8" referrerpolicy="noreferrer" target="_blank">
+                Sign
+                up here
+              </a>
+            </div>
+        </div>
+        </a>
+        <div class="relative z-10 text-center mt-16">
+          <h2 class="text-3xl font-extrabold text-gray-800 tracking-tight sm:text-4xl">We can only accomodate up to 70
+            attendees.</h2>
+          <p class="mt-6 mx-auto max-w-2xl text-lg text-gray-700">Due to limited space, we cannot accept all
+            registrations and we may ask to speak with you over a call to confirm
+            attendance.</p>
+        </div>
 
-<img width="300px" src="https://austingriffith.com/images/austingriffith.jpg"/>
+      </div>
 
-<p><b><a href="https://twitter.com/austingriffith">Austin Griffith</a></b> is a prolific developer who works with the Ethereum Foundation. 
-      He is one of the leading developers focused on usability and creating the "aha!" moments necessary to bridge traditional software developers and consumers, over into the bright and bountiful world of crypto. 
-      This is of course a technical, and a human-oriented task, and Austin has the chops to speak to developers/users in fun and exciting ways - and his passion for Ethereum is contagious.</p>
+      <div class="mt-32">
+        <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+          <div class="lg:grid lg:grid-cols-3 lg:gap-24 lg:items-center">
+            <div>
+              <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Schedule</h2>
+              <p class="mt-6 max-w-3xl text-lg leading-7 text-gray-500">Friday - 22nd July</p>
+            </div>
+            <ol class="col-span-2 mt-4 divide-y divide-gray-100 text-sm leading-6">
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Introduction to the workshop</h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T08:45">8:45 - 9:00</time></dd>
+                    </div>
+                  </dl>
+                </div>
 
+              </li>
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Why cryptocurrencies are interesting and how it
+                    all
+                    ties together </h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T09:00">9:00 - 10:15</time></dd>
+                    </div>
+                  </dl>
+                </div>
 
+              </li>
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Break</h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T10:15">10:15 - 10:45</time></dd>
+                    </div>
+                  </dl>
+                </div>
 
-<img width="300px"  src="https://miro.medium.com/max/3150/1*TsxzZZpwbpbcHGTOmdZAvA.jpeg" />
+              </li>
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Implement a hello world smart contract
+                    (Solidity)
+                  </h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T10:45">10:45 - 12:00</time></dd>
+                    </div>
+                  </dl>
+                </div>
 
-<p><b><a href="https://twitter.com/stonecoldpat0">Patrick McCorry</a></b> is an intern engineer at Infura after Infura acquired his startup, any.sender. 
-    Previously, he was an Assistant Professor at King’s College London and an accomplished researcher at University College London, University of Illinois at Urbana-Champaign and Newcastle University. 
-    His expertise is cryptocurrencies, smart contracts, applied cryptography and decentralised systems. 
-    Patrick is the United Kingdom’s first PhD graduate in cryptocurrencies. 
-    His work has appeared at Devcon, Scaling Bitcoin, Breaking Bitcoin, CESC, BPASE and SBC alongside numerous academic events.</p>
+              </li>
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Lunch
+                  </h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T12:00">12:00 - 13:30</time></dd>
+                    </div>
+                  </dl>
+                </div>
 
+              </li>
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Breaking smart contracts
+                  </h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T13:30">13:30 - 15:00</time></dd>
+                    </div>
+                  </dl>
+                </div>
 
-<p>Thanks to <a href="https://twitter.com/henrlihenrli">@henrlihenrli</a> for helping us with organise logistics and the venue! yay</p>
+              </li>
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Break
+                  </h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T15:00">15:00 - 15:30</time></dd>
+                    </div>
+                  </dl>
+                </div>
+
+              </li>
+              <li class="relative flex space-x-6 py-6 xl:static">
+                <div class="flex-auto">
+                  <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">Introduction to ETH Scaffolding
+                  </h3>
+                  <dl class="mt-2 flex flex-col text-gray-700 xl:flex-row">
+                    <div class="flex items-start space-x-3">
+                      <dt class="mt-0.5">
+                        <span class="sr-only">Date</span>
+                        <!-- Heroicon name: solid/calendar -->
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </dt>
+                      <dd><time datetime="2022-07-22T15:30">15:30 - 18:00</time></dd>
+                    </div>
+                  </dl>
+                </div>
+
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-32">
+        <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+          <div class="space-y-12 lg:grid lg:grid-cols-4 lg:gap-8 lg:space-y-0">
+
+            <div class="lg:col-span-3">
+              <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
+                <li>
+                  <div class="space-y-4">
+                    <div class="md:aspect-square">
+                      <img class="object-fill w-full shadow-lg rounded-lg"
+                        src="https://austingriffith.com/images/austingriffith.jpg" alt="">
+                    </div>
+                    <div class="text-lg leading-6 font-medium space-y-1">
+                      <h3>Austin Griffith</h3>
+                      <p class="text-rose-600">Developer with the
+                        Ethereum Foundation</p>
+                    </div>
+                    <div class="text-lg">
+                      <p class="text-gray-500">He is one of the leading developers focused on usability and creating the
+                        "aha!" moments necessary to bridge
+                        traditional software developers and consumers, over into the bright and bountiful world of
+                        crypto.
+                        This is of course a technical, and a human-oriented task, and Austin has the chops to speak to
+                        developers/users in
+                        fun and exciting ways - and his passion for Ethereum is contagious.</p>
+                    </div>
+                  </div>
+                  <ul role="list" class="flex space-x-5">
+                    <li>
+                      <a href="https://twitter.com/austingriffith" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path
+                            d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="space-y-4">
+                    <div class="md:aspect-square">
+                      <img class="object-cover w-full shadow-lg rounded-lg"
+                        src="https://miro.medium.com/max/3150/1*TsxzZZpwbpbcHGTOmdZAvA.jpeg" alt="">
+                    </div>
+                    <div class="text-lg leading-6 font-medium space-y-1">
+                      <h3>Patrick McCorry</h3>
+                      <p class="text-rose-600">Infura Engineer, formerly of any.sender</p>
+                    </div>
+                    <div class="text-lg">
+                      <p class="text-gray-500">Previously, he was an Assistant Professor at King’s College London and an
+                        accomplished researcher at University
+                        College London, University of Illinois at Urbana-Champaign and Newcastle University.
+                        His expertise is cryptocurrencies, smart contracts, applied cryptography and decentralised
+                        systems.
+                        Patrick is the United Kingdom’s first PhD graduate in cryptocurrencies.
+                        His work has appeared at Devcon, Scaling Bitcoin, Breaking Bitcoin, CESC, BPASE and SBC
+                        alongside numerous academic
+                        events.</p>
+                    </div>
+                  </div>
+                  <ul role="list" class="flex space-x-5">
+                    <li>
+                      <a href="https://twitter.com/stonecoldpat0" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path
+                            d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- More people... -->
+              </ul>
+            </div>
+            <div class="space-y-5 sm:space-y-4">
+              <h2 class="text-right text-3xl font-extrabold tracking-tight sm:text-4xl">Instructors</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer section -->
+    <footer class="mt-24 bg-gray-900 sm:mt-12">
+      <div class="mx-auto max-w-md py-12 px-4 overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+        <p class="text-center text-base text-gray-200">Thanks to <a href="https://twitter.com/henrlihenrli"
+            class="text-white">@henrlihenrli</a> for helping us with organise logistics and the
+          venue! yay</p>
+      </div>
+    </footer>
+  </div>
 
 </body>
 
