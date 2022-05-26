@@ -20,28 +20,78 @@
   <link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <style>
-    .rainbow-text {
-      background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
-      text-align: center;
-      background-size: 800% 800%;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 24px;
-      animation: rainbow 8s ease infinite;
+    .text-shadow {
+      text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    .rainbow {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+      background-size: 1800% 1800%;
+
+      -webkit-animation: rainbow 18s ease infinite;
+      -z-animation: rainbow 18s ease infinite;
+      -o-animation: rainbow 18s ease infinite;
+      animation: rainbow 18s ease infinite;
+    }
+
+    @-webkit-keyframes rainbow {
+      0% {
+        background-position: 0% 82%
+      }
+
+      50% {
+        background-position: 100% 19%
+      }
+
+      100% {
+        background-position: 0% 82%
+      }
+    }
+
+    @-moz-keyframes rainbow {
+      0% {
+        background-position: 0% 82%
+      }
+
+      50% {
+        background-position: 100% 19%
+      }
+
+      100% {
+        background-position: 0% 82%
+      }
+    }
+
+    @-o-keyframes rainbow {
+      0% {
+        background-position: 0% 82%
+      }
+
+      50% {
+        background-position: 100% 19%
+      }
+
+      100% {
+        background-position: 0% 82%
+      }
     }
 
     @keyframes rainbow {
       0% {
-        background-position: 0% 50%
+        background-position: 0% 82%
       }
 
       50% {
-        background-position: 100% 25%
+        background-position: 100% 19%
       }
 
       100% {
-        background-position: 0% 50%
+        background-position: 0% 82%
       }
     }
   </style>
@@ -341,22 +391,10 @@
               <p>Then you are welcome to join the course!
               </p>
             </div>
-            <div class="relative bg-rose-500 rounded-lg shadow-lg">
-              <div class="mt-12 relative z-0 text-base max-w-prose mx-auto lg:mt-0 lg:max-w-none">
-
-              </div>
-              <div class="relative z-10 rounded-t-lg px-24 py-16 sm:px-36 sm:py-24">
-                <div aria-hidden="true" class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
-                  <svg class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1463 360">
-                    <path class="text-rose-400 text-opacity-40" fill="currentColor"
-                      d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z" />
-                    <path class="text-rose-600 text-opacity-40" fill="currentColor"
-                      d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z" />
-                  </svg>
-                </div>
+            <div class="relative rainbow rounded-lg shadow-lg">
+              <div class="relative z-10 px-24 py-16 sm:px-36 sm:py-24">
                 <div class="relative flex items-center justify-center">
-                  <h3 class="relative text-uppercase text-6xl text-white font-extrabold">FREE!</h3>
+                  <h3 class="relative text-uppercase text-6xl text-white font-extrabold text-shadow">FREE!</h3>
                 </div>
               </div>
             </div>
@@ -391,7 +429,8 @@
                     d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z" />
                 </svg>
               </div>
-              <a href="https://forms.gle/WwtW3TJPQ4jSewoA8" referrerpolicy="noreferrer" target="_blank">
+              <a href="https://forms.gle/WwtW3TJPQ4jSewoA8" referrerpolicy="noreferrer" target="_blank"
+                class="relative z-10">
                 Sign
                 up here
               </a>
@@ -600,10 +639,10 @@
       <div class="mt-32">
         <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
           <div class="space-y-12 lg:grid lg:grid-cols-4 lg:gap-8 lg:space-y-0">
-            <div class="space-y-5 sm:space-y-4 lg:col-start-2">
-              <h2 class="lg:text-center text-3xl font-extrabold tracking-tight sm:text-4xl">Instructors</h2>
+            <div class="space-y-5 sm:space-y-4">
+              <h2 class=" text-3xl font-extrabold tracking-tight sm:text-4xl">Instructors</h2>
             </div>
-            <div class="lg:col-span-3 col-start-2 lg:col-start-1">
+            <div class="lg:col-span-3">
               <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
                 <li>
                   <div class="space-y-4">
